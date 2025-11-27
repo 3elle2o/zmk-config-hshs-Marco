@@ -19,11 +19,9 @@
 
 
 #define QWERTY_L 0
-#define DVORAK_L 1
-#define COLEMK_L 2
-#define NAV_L    3
-#define SYM_L    4
-#define ADJ_L    5
+#define NAV_L    1
+#define SYM_L    2
+#define ADJ_L    3
 
 #define Undo   LC(Z)
 #define Cut    LC(X)
@@ -35,103 +33,6 @@
 / {
         keymap {
                 compatible = "zmk,keymap";
-
-/ {
-    combos {
-        compatible = "zmk,combos";
-
-        spc {
-            bindings = <&kp SPACE>;
-            key-positions = <16 15>;
-        };
-
-        bks {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <19 20>;
-        };
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <27 28>;
-        };
-
-        shift {
-            bindings = <&sk LEFT_SHIFT>;
-            key-positions = <31 32>;
-        };
-
-        del {
-            bindings = <&kp DEL>;
-            key-positions = <28 29>;
-        };
-
-        maiusc {
-            bindings = <&capsword>;
-            key-positions = <30 31>;
-        };
-    };
-
-    behaviors {
-        capsword: capsword {
-            compatible = "zmk,behavior-caps-word";
-            label = "CAPSWORD";
-            #binding-cells = <0>;
-            continue-list = <DELETE BACKSPACE>;
-        };
-
-        parentesi: parentesi {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PARENTESI";
-            #binding-cells = <0>;
-            bindings = <&kp LPAR>, <&kp RPAR>;
-        };
-
-        ateuro: ateuro {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ATEURO";
-            #binding-cells = <0>;
-            bindings = <&kp AT_SIGN>, <&kp F4>;
-        };
-
-        Pas: Pas {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PAS";
-            #binding-cells = <0>;
-            bindings = <&Passpc>, <&Passfirma>;
-        };
-    };
-
-
-    behaviors {
-        capsword: capsword {
-            compatible = "zmk,behavior-caps-word";
-            label = "CAPSWORD";
-            #binding-cells = <0>;
-            continue-list = <DELETE BACKSPACE>;
-        };
-
-        parentesi: parentesi {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PARENTESI";
-            #binding-cells = <0>;
-            bindings = <&kp LPAR>, <&kp RPAR>;
-        };
-
-        ateuro: ateuro {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ATEURO";
-            #binding-cells = <0>;
-            bindings = <&kp AT_SIGN>, <&kp F4>;
-        };
-
-        Pas: Pas {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PAS";
-            #binding-cells = <0>;
-            bindings = <&Passpc>, <&Passfirma>;
-        };
-    };
-
 
                 default_layer {
 /* QWERTY
